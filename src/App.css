@@ -33,7 +33,7 @@
 }
 
 
-/** Custom CSS*/
+/** Chessboard*/
 .square {
   background: #fff;
   border: 1px solid #999;
@@ -67,4 +67,20 @@
 
 .black {
   background-color: black;
+}
+
+.chessboard .board-row:nth-of-type(odd) .square:nth-of-type(odd){
+  background-color:  black;
+}
+.chessboard .board-row:nth-of-type(even) .square:nth-of-type(even){
+  background-color:  black;
+}
+
+.chessboard {
+  background-color: brown;
+}
+
+/** Utility classes */
+.centered {
+  display: inline-block
 }

@@ -22,8 +22,8 @@ class Board extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="board">
+      <div className= "centered">
+        <div className="chessboard">
           {this.renderRow(0)}
           {this.renderRow(1)}
           {this.renderRow(2)}
@@ -75,7 +75,6 @@ export default App;
 // TODO: Implement Win conditions.
 // TODO: Implement tie conditions.
 // TODO: Implement piece rendering.
-// TODO: Implement Board colors. === In progress - DK =====
 // TODO: Implement Piece rendering
 // TODO: Implement Undo
 // TODO: Implement optional move clock.
@@ -85,3 +84,12 @@ export default App;
 // TODO: Persist state in backend server
 // TODO: Implement invite linking
 // TODO: Implement real time moves.
+
+
+
+/*
+=====Completed=====
+ TODO: Implement Board colors. DK
+
+
+*/
