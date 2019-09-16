@@ -35,10 +35,10 @@
 
 /** Chessboard*/
 .square {
-  background: #fff;
+  background: beige;
   border: 1px solid #999;
   float: left;
-  font-size: 24px;
+  font-size: 15px;
   font-weight: bold;
   line-height: 34px;
   height: 75px;
@@ -65,15 +65,11 @@
   display: table;
 }
 
-.black {
-  background-color: black;
+.chessboard .board-row:nth-of-type(even) .square:nth-of-type(odd){
+  background-color:  saddlebrown;
 }
-
-.chessboard .board-row:nth-of-type(odd) .square:nth-of-type(odd){
-  background-color:  black;
-}
-.chessboard .board-row:nth-of-type(even) .square:nth-of-type(even){
-  background-color:  black;
+.chessboard .board-row:nth-of-type(odd) .square:nth-of-type(even){
+  background-color:  saddlebrown;
 }
 
 .chessboard {
@@ -84,3 +80,12 @@
 .centered {
   display: inline-block
 }
+
+.black {
+  color:  black;
+}
+
+.white {
+  color:  white;
+}
+

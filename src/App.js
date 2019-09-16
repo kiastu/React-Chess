@@ -11,13 +11,32 @@ function App() {
 }
 
 class Game extends React.Component {
-  // TODO: Implement Game state saving.
+  constructor(props) {
+    super(props)
 
+  }
 }
 
 class Board extends React.Component {
   constructor (props) {
     super(props)
+
+    let board = new Array(8).fill(0).map(() => new Array(8).fill(0))
+
+    for(let x = 0; x < 8 ; x+=1) {
+      board[1][x] = (<Pawn x={x}  y={1} color = "black"/>)
+      board[6][x] = (<Pawn x={x}  y={6} color = "white"/>)
+    }
+
+    // TODO: implement and render the rest of the pieces
+    
+    this.state = {
+      board: board,
+    }
+
+  }
+
+  resetBoard() {
   }
 
   render() {
@@ -37,33 +56,61 @@ class Board extends React.Component {
       )
   }
 
-  renderSquare(y, isBlack) {
-    return (<Square isBlack = {isBlack} value = {y}/>)
+  renderSquare(maybePiece) {
+    return (<button class="square" occupiedBy={maybePiece}> {maybePiece == 0 ? "" : maybePiece}</button>)
   }
 
-  renderRow(x) {
+  renderRow(y) {
     return (
-      <div className="board-row"  x-value = {x}>
-        {this.renderSquare(0)}
-        {this.renderSquare(1)}
-        {this.renderSquare(2)}
-        {this.renderSquare(3)}
-        {this.renderSquare(4)}
-        {this.renderSquare(5)}
-        {this.renderSquare(6)}
-        {this.renderSquare(7)}
+      <div className="board-row"  y-value = {y}>
+        {this.renderSquare(this.state.board[y][0])}
+        {this.renderSquare(this.state.board[y][1])}
+        {this.renderSquare(this.state.board[y][2])}
+        {this.renderSquare(this.state.board[y][3])}
+        {this.renderSquare(this.state.board[y][4])}
+        {this.renderSquare(this.state.board[y][5])}
+        {this.renderSquare(this.state.board[y][6])}
+        {this.renderSquare(this.state.board[y][7])}
       </div>
     )
 
   }
-
-
 }
 
-function Square(props) {
-  return (
-      <button className="square" occupiedBy={props.occupiedBy}>{props.occupiedBy}</button>
-    )
+class ChessPiece extends React.Component {
+  // TODO: Propagate down onClick events. 
+  constructor (props) {
+    super(props)
+    this.state = props
+  }
+
+  getMoves(x, y) {
+    new Error("Must implement function getValue for " + this.class)
+  }
+
+  getValue() {
+    new Error("Must implement function getValue for " + this.class)
+  }
+
+  render () {
+    return (<p>Should've implemented something yo</p>)
+  }
+}
+
+class Pawn extends ChessPiece {
+  constructor(props) {
+    super(props)
+    this.state = props
+  }
+  getMoves (x, y, grid, isFirstMove=false) {
+    // TODO: implement.
+    let moves = []
+    return moves
+  }
+
+  render() {
+    return (<div class = {this.state.color}> pawn</div>)
+  }
 }
 
 export default App;
